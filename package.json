@@ -14,11 +14,9 @@
     "test": "jest",
     "lint": "eslint .",
     "fix": "npm run lint -- --fix",
-    "postinstall": "husky install",
+    "prepare": "husky install",
     "preversion": "npm test && npm run lint",
-    "postversion": "git push && git push --tags && npm publish",
-    "prepack": "node bin --disable",
-    "postpack": "node bin --enable"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
