@@ -11,15 +11,15 @@ __Important__ if your project is using npm or pnpm, you can achieve the desired 
 {
   "scripts": {
     "postinstall": "<some dev only command>",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
   }
 }
 ```
 
-_On `prepack`, `postinstall` will be renamed to `_postinstall` (disabled)_
+Before publishing your package, run `pinst --disable`. It will rename the `postinstall` script to `_postinstall` (disabled).
 
-_On `postpack`, it will be renamed back to `postinstall` (enabled)_
+After publishing your package, run `pinst --enable`. It will rename the script back to `postinstall` (enabled).
+
+**Caution**: [It is not safe to run `pinst` in the `prepack` script](https://gist.github.com/djcsdy/3ca078e23fdac4c50e077c84e8284a95).
 
 ## CLI
 
